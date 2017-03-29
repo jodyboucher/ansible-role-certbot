@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  vars:
+    certbot_auto_renew_user: root
   roles:
     # role source directory is mounted in docker container under this name during testing
     - role_under_test
