@@ -1,0 +1,17 @@
+galaxy_info:
+  author: Jody Boucher
+  description: Installs and certbot (LetsEncrypt).
+  company:
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+  galaxy_tags:
+    - certbot
+    - web
+    - ssl
+    - certificate
+
+dependencies: []
