@@ -1,0 +1,28 @@
+---
+- name: Install requirements
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+      - git
+      - openssl
+
+- name: Add certbot PPA
+  apt_repository:
+    repo: 'ppa:certbot/certbot'
+    state: present
+    update_cache: yes
+  register: certbot_add_ppa_result
+
+- name: Ensure certbot will reinstall if the PPA was just added
+  apt:
+    name: certbot
+    state: absent
+  when: certbot_add_ppa_result.changed
+
+- name: Install certbot
+  apt:
+    name: "certbot"
+    state: present
