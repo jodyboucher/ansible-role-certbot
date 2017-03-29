@@ -1,9 +1,9 @@
 ---
 - include: install.yml
 
-- name: Add cron job for 'certbot-auto renew'
+- name: Certbot automatic renewal
   cron:
-    name: Certbot automatic renewal.
+    name: Add cron job for 'certbot renew'
     job: "certbot renew --quiet"
     minute: "{{ certbot_auto_renew_minute }}"
     hour: "{{ certbot_auto_renew_hour }}"
