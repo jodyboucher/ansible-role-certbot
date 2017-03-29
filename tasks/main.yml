@@ -4,14 +4,8 @@
 - name: Add cron job for 'certbot-auto renew'
   cron:
     name: Certbot automatic renewal.
-    job: "{{ certbot_dir }}/certbot-auto renew --quiet --no-self-upgrade"
+    job: "certbot renew --quiet"
     minute: "{{ certbot_auto_renew_minute }}"
     hour: "{{ certbot_auto_renew_hour }}"
     user: "{{ certbot_auto_renew_user }}"
   when: certbot_auto_renew
-
-- name: Display certbot instructions
-  debug:
-    msg: |
-      certbot is install but certificate installation is not complete.
-      You must run certbot with one of the authenticator plugins to obtain your certificates.

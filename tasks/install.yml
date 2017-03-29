@@ -26,3 +26,11 @@
   apt:
     name: "certbot"
     state: present
+  register: certbot_install_result
+
+- name: Display certbot instructions
+  debug:
+    msg: |
+      certbot is installed but certificate installation is not complete.
+      You must run certbot with one of the authenticator plugins to obtain your certificates.
+  when: certbot_install_result.changed
