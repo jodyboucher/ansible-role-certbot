@@ -1,5 +1,6 @@
 # Ansible role: certbot
 
+[![Build Status](https://travis-ci.org/jodyboucher/ansible-role-certbot.svg?branch=master)](https://travis-ci.org/jodyboucher/ansible-role-certbot)
 
 An [Ansible](https://www.ansible.com/) role that installs the certbot client.
 
