@@ -3,8 +3,8 @@
 
 - name: Certbot automatic renewal
   cron:
-    name: Add cron job for 'certbot renew'
-    job: "certbot renew --quiet"
+    name: Add cron job to have certbot check for renewal
+    job: "certbot renew --quiet --renew-hook "service nginx reload""
     minute: "{{ certbot_auto_renew_minute }}"
     hour: "{{ certbot_auto_renew_hour }}"
     user: "{{ certbot_auto_renew_user }}"
