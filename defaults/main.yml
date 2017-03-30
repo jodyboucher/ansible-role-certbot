@@ -4,7 +4,7 @@
 certbot_auto_renew: true
 
 # The user for which the cron job is configured
-certbot_auto_renew_user: "{{ ansible_user }}"
+certbot_auto_renew_user: "root"
 
 # The hour when the job should run
 certbot_auto_renew_hour: 3
