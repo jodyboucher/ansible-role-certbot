@@ -1,7 +1,18 @@
 ---
 - hosts: all
-  vars:
-    certbot_auto_renew_user: root
+
+  pre_tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+      changed_when: false
+
+    - name: Install cron
+      apt:
+        name: cron
+        state: present
+
   roles:
     # role source directory is mounted in docker container under this name during testing
     - role_under_test
