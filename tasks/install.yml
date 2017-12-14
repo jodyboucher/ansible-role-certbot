@@ -24,7 +24,7 @@
 
 - name: Install certbot
   apt:
-    name: "certbot"
+    name: "python-certbot-nginx"
     state: present
   register: certbot_install_result
 

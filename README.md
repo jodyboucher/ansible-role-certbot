@@ -6,11 +6,15 @@ An [Ansible](https://www.ansible.com/) role that installs the certbot client.
 
 The role does not obtain or install certificates - it only installs the certbot client.  You are expected to obtain the certificates and install as appropriate to your needs.
 
+This role in intended for servers running nginx.
+
 This role is designed for Ubuntu 16.04 Xenial.
 
 ## Requirements
 
+* Ubuntu 16.04 Xenial
 * [Ansible](https://docs.ansible.com/ansible/intro_installation.html) >= 2.4 (makes use of new import_tasks module)
+* nginx
 * This role requires `root` access so be sure to enable privilege escalation:
 
 ```
