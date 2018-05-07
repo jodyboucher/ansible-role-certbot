@@ -8,11 +8,14 @@ The role does not obtain or install certificates - it only installs the certbot 
 
 This role in intended for servers running nginx.
 
-This role is designed for Ubuntu 16.04 Xenial.
+This role is designed for and tested on the following OS distributions:
+
+* Ubuntu 16.04 Xenial
+* Ubuntu 18.04 Bionic
 
 ## Requirements
 
-* Ubuntu 16.04 Xenial
+* Ubuntu 16.04 Xenial or Ubuntu 18.04 Bionic
 * [Ansible](https://docs.ansible.com/ansible/intro_installation.html) >= 2.4 (makes use of new import_tasks module)
 * nginx
 * This role requires `root` access so be sure to enable privilege escalation:
