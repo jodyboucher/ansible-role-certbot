@@ -6,6 +6,7 @@
     update_cache: yes
     cache_valid_time: 3600
   with_items:
+      - software-properties-common
       - git
       - openssl
 
@@ -24,8 +25,11 @@
 
 - name: Install certbot
   apt:
-    name: "python-certbot-nginx"
+    name: "{{ item }}"
     state: present
+  with_items:
+      - certbot
+      - python-certbot-nginx
   register: certbot_install_result
 
 - name: Display certbot instructions
